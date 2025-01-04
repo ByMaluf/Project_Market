@@ -1,0 +1,24 @@
+li,
+ul,
+ins,
+del {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  margin: 0px;
+  padding: 0px;
+}

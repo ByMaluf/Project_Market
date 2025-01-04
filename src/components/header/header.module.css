@@ -1,0 +1,27 @@
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px auto 60px;
+  max-width: 1200px;
+  padding: 0px 24px;
+}
+
+.containerImg {
+  display: flex;
+}
+
+.containerImg h1 a {
+  color: #ffa500;
+}
+
+.cabecalho nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.itemNavigation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
