@@ -73,7 +73,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.card {
+  transition: 0.3s;
+}
+
+.comprar:hover .card {
+  color: #a46b14;
+  transform: translateX(-30%) rotate(-0.025turn);
+}
+
+.comprar:hover {
+  letter-spacing: 2px;
+  color: #2f2a2a;
 }
 
 .containerPrice {

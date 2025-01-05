@@ -9,7 +9,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Layout><Content /></Layout>} />
-        <Route path="/product/:id" element={<Layout><ContentProduct /></Layout>} />
+        <Route path="/product/:idProduct" element={<Layout><ContentProduct /></Layout>} />
       </Routes>
     </BrowserRouter>
   );
