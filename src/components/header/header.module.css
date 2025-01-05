@@ -1,10 +1,16 @@
+.containerHeader {
+  background-color: #1b1b53;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+
 .cabecalho {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 30px auto 60px;
+  margin: 0px auto;
   max-width: 1200px;
-  padding: 0px 24px;
 }
 
 .containerImg {
@@ -24,4 +30,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+.itemNavigation a {
 }
