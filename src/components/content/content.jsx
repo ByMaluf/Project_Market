@@ -39,7 +39,7 @@ export default function Content() {
           {products && products.map((produto) => (
             <Link key={produto.id} to={`/product/${produto.id}`}>
               <div>
-                <img src={produto.images[0]} alt="Imagem do Produto" />
+                <img src={produto.thumbnail} alt="Imagem do Produto" />
                 <h3>{produto.title}</h3>
                 <div className={style.containerPrice}>
                   <del>R$199,90</del>

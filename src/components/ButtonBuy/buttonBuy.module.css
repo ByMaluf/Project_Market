@@ -24,10 +24,13 @@
 
 .comprar:hover .cart {
   color: #a46b14;
+  color: #ffa500;
   transform: translateX(-30%) rotate(-0.025turn);
 }
 
 .comprar:hover {
   letter-spacing: 2px;
-  color: #2f2a2a;
+  /* color: #2f2a2a; */
+  background-color: #1b1b53;
+  color: #f5f5f5;
 }
