@@ -35,4 +35,9 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  color: #f5f5f5;
+}
+
+.itemNavigation a {
+  color: inherit;
 }

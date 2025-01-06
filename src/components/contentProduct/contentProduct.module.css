@@ -25,8 +25,9 @@
 }
 
 .productImage {
-  max-width: 100%;
-  object-fit: contain;
+  width: 100%; /* Faz a imagem ocupar 100% da largura do container */
+  height: 100%; /* Faz a imagem ocupar 100% da altura do container */
+  object-fit: cover; /* Ajusta a imagem para cobrir o container sem distorção */
 }
 
 .productPrice {
@@ -53,4 +54,105 @@ span {
   line-height: 1.125rem;
   font-weight: 700;
   color: #1e1e1e;
+}
+
+.containerCep > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerCep p {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #1b1b53;
+  text-decoration: underline;
+}
+
+.cep {
+  display: flex;
+  gap: 10px;
+}
+
+.cep input {
+  border-radius: 4px;
+  padding: 5px;
+  border: none;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.containerReviews h2 {
+  font-size: 1.5rem;
+  line-height: 2.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* .containerReviews > span {
+  background-color: #1b1b53;
+} */
+
+.sectionReview {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0px, 1fr));
+  gap: 15px;
+}
+
+.reviews {
+  box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px,
+    rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px,
+    rgba(42, 51, 70, 0.04) 0px 2px 2px -1px,
+    rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
+    rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px,
+    rgba(42, 51, 70, 0.03) 0px 10px 10px -5px,
+    rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.rating strong {
+  color: #ffa500;
+  font-size: 3.75rem;
+  line-height: 3.75rem;
+  font-weight: 700;
+}
+
+.rating {
+  font-size: 1.5rem;
+  line-height: 2.125rem;
+  color: #ffa500;
+}
+
+.reviews p:first-child {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 500;
+  color: rgb(66, 70, 77);
+}
+
+.reviews div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.comments {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reviewDate {
+  font-size: 0.625rem;
+  line-height: 1rem;
+  color: rgb(127, 133, 141);
+  font-weight: 600;
 }

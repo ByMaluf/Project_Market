@@ -14,6 +14,27 @@ export default function ContentProduct() {
     console.log(product)
   }, [idProduct, setProductId, product]);
 
+
+  const lengthReviews = (reviews) => {
+    if (!reviews) {
+      return 0;
+    }
+    return reviews.length;
+  };
+
+  const formatDate = (date) => {
+    if (!date) {
+      return "Data inválida";
+    }
+    console.log(date)
+    const parsedDate = new Date(date);
+    return parsedDate.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  };
+
   // if (productLoading) return <p>Carregando...</p>;
   // if (productError) return <p style={{ color: "red" }}>Erro: {productError}</p>;
 
@@ -33,20 +54,37 @@ export default function ContentProduct() {
               {formatPrice(product?.price)}
             </p>
             <ButtonBuy />
+
+            <div className={style.containerCep}>
+              <div>
+                <div className={style.cep}>
+                  <label htmlFor="cep">Valor e prazo de entrega</label>
+                  <input id="cep" type="text" />
+                </div>
+                <p><a href="#">Não lembro o meu CEP</a></p>
+              </div>
+              <span>Os prazos de entrega começam a contar a partir da confirmação de pagamento</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <h2>Comentários dos Usuários</h2>
-        {product && product?.reviews.map((reviews) =>
-          <>
-            <span>{reviews.date}</span>
-            <p>{reviews.reviewerName}</p>
-            <p>Avaliação: {reviews.rating}</p>
-            <p key={reviews.date}>{reviews.comment}</p>
-          </>
-        )}
+      <section className={style.containerReviews}>
+        <h2>Avaliação dos Usuários</h2>
+        <span>{lengthReviews(product?.reviews)} Avaliações</span>
+        <span className={style.rating}><strong>{product?.rating}</strong>/5</span>
+        <div className={style.sectionReview}>
+          {product && product?.reviews.map((reviews) =>
+            <div className={style.reviews} key={reviews.date}>
+              <div>
+                <p>{reviews.reviewerName}</p>
+                <span className={style.reviewDate}>Avaliado em {formatDate(reviews?.date)}</span>
+              </div>
+              <p>Avaliação: {reviews.rating}</p>
+              <p className={style.comments}>{reviews.comment}</p>
+            </div>
+          )}
+        </div>
       </section>
     </div>
   );

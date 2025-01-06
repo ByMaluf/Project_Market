@@ -22,7 +22,7 @@ export default function Content() {
   return (
     <>
       <section className={style.containerAll}>
-        <aside>
+        {/* <aside>
           <nav className={style.menuFilter}>
             <ul>
               <h3>Departamentos</h3>
@@ -33,7 +33,7 @@ export default function Content() {
               </ul>
             </ul>
           </nav>
-        </aside>
+        </aside> */}
 
         <main className={style.secaoAnuncios}>
           {products && products.map((produto) => (
