@@ -1,0 +1,56 @@
+.productContainer {
+  max-width: 1200px;
+  margin: 0px auto;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(86, 92, 105);
+}
+
+.productContainer h1 {
+  font-size: 1.5rem;
+  line-height: 2.125rem;
+  font-weight: 700;
+  color: rgb(66, 70, 77);
+}
+
+.containerDetailsProduct {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2, minmax(0px, 1fr));
+}
+
+.containerDetailsProduct strong {
+  color: darkgreen;
+  font-weight: 700;
+}
+
+.productImage {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.productPrice {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 700;
+  color: #ffae00;
+}
+
+.detailsProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+span {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+.byMarket {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #1e1e1e;
+}

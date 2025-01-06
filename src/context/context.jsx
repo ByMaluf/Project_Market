@@ -6,9 +6,16 @@ import useFetchProductById from "../customHooks/useFetchDataById";
 const ProductContext = createContext();
 
 export const Context = ({ children }) => {
-  const { data: products, loading: productsLoading, error: productsError } = useFetchData("https://dummyjson.com/products");
+  const { data: products, loading: productsLoading, error: productsError } = useFetchData("https://dummyjson.com/products?limit=50");
   const [productId, setProductId] = useState(null);
   const { data: product, loading: productLoading, error: productError } = useFetchProductById(productId);
+
+  function formatPrice(price) {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    }).format(price);
+  }
 
   return (
     <ProductContext.Provider
@@ -20,6 +27,7 @@ export const Context = ({ children }) => {
         productLoading,
         productError,
         setProductId,
+        formatPrice
       }}
     >
       {children}

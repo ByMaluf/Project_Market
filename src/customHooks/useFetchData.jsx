@@ -16,7 +16,10 @@ export default function useFetchData(url) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const json = await response.json();
-        setData(json);
+        const filteredProducts = json.products.filter(
+          (product) => product.category !== "groceries"
+        );
+        setData(filteredProducts);
       } catch (err) {
         setError(err.message);
       } finally {

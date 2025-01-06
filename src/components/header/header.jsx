@@ -9,7 +9,7 @@ export default function Header() {
       <div className={style.cabecalho}>
         <div className={style.containerImg}>
           <img src="" alt="" />
-          <h1><Link to={'/'}>ByMarket</Link></h1>
+          <h1><Link to={'/'}> <strong className={style.by}>By</strong>Market</Link></h1>
         </div>
         <nav>
           <ul>
