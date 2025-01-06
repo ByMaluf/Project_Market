@@ -3,6 +3,8 @@ import { useContext, useEffect } from "react";
 import ProductContext from "../../context/context";
 import style from "./contentProduct.module.css";
 import ButtonBuy from "../ButtonBuy/ButtonBuy";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleExclamation, faTruckFast } from '@fortawesome/free-solid-svg-icons';
 
 export default function ContentProduct() {
   const { idProduct } = useParams();
@@ -45,6 +47,21 @@ export default function ContentProduct() {
         <div className={style.containerDetailsProduct}>
           <div>
             <img src={product?.images[0]} alt={product?.title} className={style.productImage} />
+
+            <div className={style.containerCep}>
+              <div>
+                <div className={style.cep}>
+                  <label htmlFor="cep"><FontAwesomeIcon icon={faTruckFast} size="lg" color='#ffa500' /> Valor e prazo de entrega</label>
+                  <input id="cep" type="text" />
+                </div>
+                <p><a href="#">Não lembro o meu CEP</a></p>
+              </div>
+              <span>
+                <FontAwesomeIcon icon={faCircleExclamation} size="lg" color="#ffa500" />
+                Os prazos de entrega começam a contar a partir da confirmação de pagamento
+              </span>
+            </div>
+
           </div>
 
           <div className={style.detailsProduct}>
@@ -53,26 +70,21 @@ export default function ContentProduct() {
             <p className={style.productPrice}>
               {formatPrice(product?.price)}
             </p>
-            <ButtonBuy />
+            <ButtonBuy sizeCart="xl" />
 
-            <div className={style.containerCep}>
-              <div>
-                <div className={style.cep}>
-                  <label htmlFor="cep">Valor e prazo de entrega</label>
-                  <input id="cep" type="text" />
-                </div>
-                <p><a href="#">Não lembro o meu CEP</a></p>
-              </div>
-              <span>Os prazos de entrega começam a contar a partir da confirmação de pagamento</span>
-            </div>
+
           </div>
         </div>
       </section>
 
       <section className={style.containerReviews}>
-        <h2>Avaliação dos Usuários</h2>
-        <span>{lengthReviews(product?.reviews)} Avaliações</span>
-        <span className={style.rating}><strong>{product?.rating}</strong>/5</span>
+        <div className={style.headerReview}>
+          <h2>Avaliação dos Usuários</h2>
+          <div>
+            <span className={style.rating}><strong>{product?.rating}</strong>/5</span>
+            <span>{lengthReviews(product?.reviews)} Avaliações</span>
+          </div>
+        </div>
         <div className={style.sectionReview}>
           {product && product?.reviews.map((reviews) =>
             <div className={style.reviews} key={reviews.date}>

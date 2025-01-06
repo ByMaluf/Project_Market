@@ -9,13 +9,6 @@ export default function Content() {
   const { products, formatPrice, productsLoading, productsError } = useContext(ProductContext);
   console.log(products)
 
-  // function formatPrice(price) {
-  //   return new Intl.NumberFormat('pt-BR', {
-  //     style: 'currency',
-  //     currency: 'BRL',
-  //   }).format(price);
-  // }
-
   // if (productsLoading) return <p>Carregando produtos...</p>;
   // if (productsError) return <p style={{ color: "red" }}>Erro: {productsError}</p>;
 
@@ -45,7 +38,7 @@ export default function Content() {
                   <del>R$199,90</del>
                   <ins>{formatPrice(produto.price)}</ins>
                 </div>
-                <ButtonBuy />
+                <ButtonBuy sizeCart='ls' />
               </div>
             </Link>
           ))}

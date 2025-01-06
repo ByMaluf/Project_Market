@@ -25,9 +25,9 @@
 }
 
 .productImage {
-  width: 100%; /* Faz a imagem ocupar 100% da largura do container */
-  height: 100%; /* Faz a imagem ocupar 100% da altura do container */
-  object-fit: cover; /* Ajusta a imagem para cobrir o container sem distorção */
+  width: 100%;
+  height: 80%;
+  object-fit: contain;
 }
 
 .productPrice {
@@ -56,18 +56,34 @@ span {
   color: #1e1e1e;
 }
 
+.containerCep {
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  padding: 10px;
+  width: 100%;
+}
+
 .containerCep > div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.containerCep p {
+.containerCep p a {
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  font-size: 0.825rem;
+  font-size: 1srem;
   font-weight: 700;
   color: #1b1b53;
   text-decoration: underline;
+}
+
+.containerCep span {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 0.775rem;
+  margin-top: 8px;
 }
 
 .cep {
@@ -83,15 +99,28 @@ span {
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
-.containerReviews h2 {
+.headerReview::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 20px;
+  background-color: rgb(0, 0, 0, 0.1);
+}
+
+.headerReview h2 {
   font-size: 1.5rem;
   line-height: 2.125rem;
   font-weight: 700;
   text-transform: uppercase;
 }
-/* .containerReviews > span {
-  background-color: #1b1b53;
-} */
+
+.headerReview div {
+  margin: 30px 0px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
 
 .sectionReview {
   margin-top: 40px;
