@@ -72,7 +72,6 @@ export default function ContentProduct() {
             </p>
             <ButtonBuy sizeCart="xl" />
 
-
           </div>
         </div>
       </section>

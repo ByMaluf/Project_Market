@@ -5,7 +5,7 @@ import style from './buttonBuy.module.css';
 
 export default function ButtonBuy({ sizeCart }) {
   return (
-    <button className={style.comprar}>
+    <button className={`${style.comprar}`}>
       <FontAwesomeIcon className={style.cart} icon={faCartShopping} size={sizeCart} color="white" />
       Comprar
     </button>
@@ -14,4 +14,5 @@ export default function ButtonBuy({ sizeCart }) {
 
 ButtonBuy.propTypes = {
   sizeCart: PropTypes.string.isRequired,
+  sizeBuy: PropTypes.string.isRequired,
 };
