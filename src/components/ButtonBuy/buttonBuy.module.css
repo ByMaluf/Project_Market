@@ -23,7 +23,6 @@
 }
 
 .comprar:hover .cart {
-  color: #a46b14;
   color: #ffa500;
   transform: translateX(-30%) rotate(-0.025turn);
 }

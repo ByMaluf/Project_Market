@@ -23,7 +23,7 @@ export default function Content() {
     <>
       <section className={style.containerAll}>
         <aside>
-          <nav>
+          <nav className={style.menuFilter}>
             <ul>
               <h3>Departamentos</h3>
               <ul>
