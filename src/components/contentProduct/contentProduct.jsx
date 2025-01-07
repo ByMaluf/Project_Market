@@ -47,7 +47,17 @@ export default function ContentProduct() {
         <div className={style.containerDetailsProduct}>
           <div>
             <img src={product?.images[0]} alt={product?.title} className={style.productImage} />
+          </div>
 
+          <div className={style.detailsProduct}>
+            <span>Vendido e entregue por: <span className={style.byMarket}>ByMarket</span> | <strong>Em estoque</strong></span>
+            <p>{product?.description}</p>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '100px' }}>
+              <p className={style.productPrice}>
+                {formatPrice(product?.price)}
+              </p>
+              <ButtonBuy sizeCart="xl" className={style.buttonBuy} />
+            </div>
             <div className={style.containerCep}>
               <div>
                 <div className={style.cep}>
@@ -61,16 +71,6 @@ export default function ContentProduct() {
                 Os prazos de entrega começam a contar a partir da confirmação de pagamento
               </span>
             </div>
-
-          </div>
-
-          <div className={style.detailsProduct}>
-            <span>Vendido e entregue por: <span className={style.byMarket}>ByMarket</span> | <strong>Em estoque</strong></span>
-            <p>{product?.description}</p>
-            <p className={style.productPrice}>
-              {formatPrice(product?.price)}
-            </p>
-            <ButtonBuy sizeCart="xl" />
 
           </div>
         </div>

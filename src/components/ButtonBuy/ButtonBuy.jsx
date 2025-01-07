@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import style from './buttonBuy.module.css';
 
-export default function ButtonBuy({ sizeCart }) {
+export default function ButtonBuy({ sizeCart, className }) {
   return (
-    <button className={`${style.comprar}`}>
+    <button className={`${style.comprar} ${className || ''}`}>
       <FontAwesomeIcon className={style.cart} icon={faCartShopping} size={sizeCart} color="white" />
       Comprar
     </button>
@@ -14,5 +14,5 @@ export default function ButtonBuy({ sizeCart }) {
 
 ButtonBuy.propTypes = {
   sizeCart: PropTypes.string.isRequired,
-  sizeBuy: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
