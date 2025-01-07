@@ -10,6 +10,10 @@ export const Context = ({ children }) => {
   const [productId, setProductId] = useState(null);
   const { data: product, loading: productLoading, error: productError } = useFetchProductById(productId);
 
+  const resetProductId = () => {
+    setProductId(product => product == null);
+  };
+
   function formatPrice(price) {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -27,7 +31,8 @@ export const Context = ({ children }) => {
         productLoading,
         productError,
         setProductId,
-        formatPrice
+        formatPrice,
+        resetProductId
       }}
     >
       {children}

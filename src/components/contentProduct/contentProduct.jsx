@@ -1,21 +1,28 @@
 import { useParams } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductContext from "../../context/context";
 import style from "./contentProduct.module.css";
 import ButtonBuy from "../ButtonBuy/ButtonBuy";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation, faTruckFast } from '@fortawesome/free-solid-svg-icons';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function ContentProduct() {
   const { idProduct } = useParams();
-  console.log(idProduct)
-  const { product, formatPrice, productLoading, productError, setProductId } = useContext(ProductContext);
+  const { product, formatPrice, productLoading, productError, setProductId, resetProductId } = useContext(ProductContext);
+  const [loadingProduct, setLoadingProduct] = useState(true);
 
   useEffect(() => {
-    setProductId(idProduct);
-    console.log(product)
-  }, [idProduct, setProductId, product]);
+    setLoadingProduct(true);
+    resetProductId(); 
+    setProductId(idProduct); 
+  }, [idProduct, setProductId, resetProductId]);
 
+  useEffect(() => {
+    if (product) {
+      setLoadingProduct(false); 
+    }
+  }, [product]);
 
   const lengthReviews = (reviews) => {
     if (!reviews) {
@@ -28,7 +35,6 @@ export default function ContentProduct() {
     if (!date) {
       return "Data inválida";
     }
-    console.log(date)
     const parsedDate = new Date(date);
     return parsedDate.toLocaleDateString("pt-BR", {
       day: "2-digit",
@@ -37,8 +43,17 @@ export default function ContentProduct() {
     });
   };
 
-  // if (productLoading) return <p>Carregando...</p>;
-  // if (productError) return <p style={{ color: "red" }}>Erro: {productError}</p>;
+  if (loadingProduct || productLoading) {
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <CircularProgress />
+      </div>
+    );
+  }
+
+  if (productError) {
+    return <p style={{ color: "red" }}>Erro: {productError}</p>;
+  }
 
   return (
     <div className={style.productContainer}>

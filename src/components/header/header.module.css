@@ -12,6 +12,7 @@
   flex-wrap: wrap;
   margin: 0px auto;
   max-width: 1400px;
+  gap: 25px;
 }
 
 .by {
@@ -29,6 +30,7 @@
 .cabecalho nav ul {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .itemNavigation {
